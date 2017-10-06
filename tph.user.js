@@ -3,6 +3,7 @@
 // @description   Press space to honk.
 // @version       0.4
 // @downloadURL   https://github.com/wilcooo/TagPro-Honk/raw/master/tph.user.js
+// @require       https://github.com/wilcooo/TagPro-Honk/raw/master/howler.js
 // @supportURL    https://www.reddit.com/message/compose/?to=Wilcooo
 // @website       https://www.reddit.com/r/TagPro/comments/I-HAVE-NOT-WRITTEN-A-POST-YET
 // @include       http://tagpro-*.koalabeast.com:*
