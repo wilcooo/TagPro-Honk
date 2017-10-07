@@ -30,7 +30,7 @@ var timeout = 80;                                                               
                                                                                       //  //
 // What key to press to honk (up&down simultaneously always works)                    //  //
 // Go to keycode.info to get the code for your preferred key.                         //  //
-var key = 32; // 32 is the code for the spacebar                                      //  //
+var honkKey = 32; // 32 is the code for the spacebar                                  //  //
                                                                                       //  //
 ////////////////////////////////////////////////////////////////////////////////////////  //
 //                                                     ### --- END OF OPTIONS --- ###     //
@@ -625,7 +625,7 @@ tagpro.ready(function waitForId() {
             var keys = ['up','down','left','right'];
 
             for (var k in keys) {
-                if (!tagpro.KeyComm.pressedDir[keys[k]])
+                if (!tagpro.KeyComm.pressedDir[keys[k]] && tagpro.KeyComm.sentDir[keys[k]])
                     tagpro.socket.emit('keyup', {k: keys[k]} );
             }
         };
@@ -696,7 +696,7 @@ tagpro.ready(function waitForId() {
 
     $(document).keydown(function(key) {
         switch (key.which) {
-            case 32:
+            case honkKey:
                 tagpro.KeyComm.send(['up','down']);
                 break;
         }
@@ -704,7 +704,7 @@ tagpro.ready(function waitForId() {
 
     $(document).keyup(function(key) {
         switch (key.which) {
-            case 32:
+            case honkKey:
                 tagpro.KeyComm.stop();
                 break;
 
